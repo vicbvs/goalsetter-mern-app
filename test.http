@@ -6,13 +6,18 @@ POST http://localhost:8000/api/goals
 Content-Type: application/json
 
 {
-  "text": "My goal"
+  "text": "My second goal"
 }
 
 
 ###
-PUT http://localhost:8000/api/goals/123
+PUT http://localhost:8000/api/goals/6244c5507bfccc27f1b0f54d
+Content-Type: application/json
+
+{
+  "text": "My updated goal"
+}
 
 
 ###
-DELETE http://localhost:8000/api/goals/123
+DELETE http://localhost:8000/api/goals/6244c5507bfccc27f1b0f54d
