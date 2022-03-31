@@ -1,4 +1,6 @@
 GET http://localhost:8000/api/goals
+Headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVlM2Q1YmMzYzkzNzM2NWIyYTg1ZiIsImlhdCI6MTY0ODc0ODgwMCwiZXhwIjoxNjUxMzQwODAwfQ.XsHOPsODNl5K1OnYAmvPklCd7PtuCceaTA_PdK-GrPI
 
 
 ###
@@ -7,6 +9,17 @@ Content-Type: application/json
 
 {
   "text": "My second goal"
+}
+
+
+###
+POST http://localhost:8000/api/goals
+Headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVlM2Q1YmMzYzkzNzM2NWIyYTg1ZiIsImlhdCI6MTY0ODc0ODgwMCwiZXhwIjoxNjUxMzQwODAwfQ.XsHOPsODNl5K1OnYAmvPklCd7PtuCceaTA_PdK-GrPI
+Content-Type: application/json
+
+{
+  "text": "My goal 2"
 }
 
 
@@ -20,4 +33,40 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8000/api/goals/6244c5507bfccc27f1b0f54d
+DELETE http://localhost:8000/api/goals/6245ea2207cba5a70cac37ef
+Headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVlM2Q1YmMzYzkzNzM2NWIyYTg1ZiIsImlhdCI6MTY0ODc0ODgwMCwiZXhwIjoxNjUxMzQwODAwfQ.XsHOPsODNl5K1OnYAmvPklCd7PtuCceaTA_PdK-GrPI
+
+
+###
+GET http://localhost:8000/api/users/me
+Content-Type: application/json
+Headers:
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDVlM2Q1YmMzYzkzNzM2NWIyYTg1ZiIsImlhdCI6MTY0ODc0ODgwMCwiZXhwIjoxNjUxMzQwODAwfQ.XsHOPsODNl5K1OnYAmvPklCd7PtuCceaTA_PdK-GrPI
+
+
+###
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+  "name": "vicbvs",
+  "email": "vicbvs@gmail.com",
+  "password": "123123"
+}
+
+###
+POST http://localhost:8000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "vicbvs@gmail.com",
+  "password": "123123"
+}
+
+
+//{
+  //"email": "testemail",
+  //"password": "testpassword"
+//}
+
