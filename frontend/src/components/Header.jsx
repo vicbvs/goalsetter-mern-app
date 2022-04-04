@@ -1,7 +1,11 @@
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { Toggle } from './Toggle';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
+import { useDarkMode } from '../styles/useDarkMode';
+import { GlobalStyles, lightTheme, darkTheme } from '../styles/globalStyles';
+import { ThemeProvider } from 'styled-components';
 
 function Header() {
   const navigate = useNavigate();
@@ -14,38 +18,44 @@ function Header() {
     navigate('/');
   };
 
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
   return (
-    <header className='header'>
-      <div className='logo'>
-        <Link to='/'>GoalSetter</Link>
-      </div>
-      <ul>
-        {user ? (
-          <li>
-            <button className='btn' onClick={onLogout}>
-              <FaSignOutAlt />
-              Logout
-            </button>
-          </li>
-        ) : (
-          <>
+    <ThemeProvider theme={themeMode}>
+      <header className='header'>
+        <div className='logo'>
+          <Link to='/'>GoalSetter</Link>
+        </div>
+        <GlobalStyles />
+        <Toggle theme={theme} toggleTheme={toggleTheme}/>
+        <ul>
+          {user ? (
             <li>
-              <Link to='/login'>
-                <FaSignInAlt />
-                Login
-              </Link>
+              <button className='btn' onClick={onLogout}>
+                <FaSignOutAlt />
+                Logout
+              </button>
             </li>
-            <li>
-              <Link to='/register'>
-                <FaUser />
-                Register
-              </Link>
-            </li>
-          </>)}
-        
-      </ul>
-    </header>
-      
+          ) : (
+            <>
+              <li>
+                <Link to='/login'>
+                  <FaSignInAlt />
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link to='/register'>
+                  <FaUser />
+                  Register
+                </Link>
+              </li>
+            </>)}
+          
+        </ul>
+      </header>
+    </ThemeProvider>      
   )
 }
 
