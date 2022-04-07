@@ -15,12 +15,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: ${({ theme }) => theme.color};
   }
 
   p {
     line-height: 1.7;
+    color: ${({ theme }) => theme.color};
   }
 
   ul {

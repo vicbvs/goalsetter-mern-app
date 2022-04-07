@@ -3,7 +3,7 @@ import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { login, reset } from './../features/auth/authSlice'
+import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
 function Login() {
@@ -87,7 +87,11 @@ function Login() {
             <button type="submit" className="btn btn-block">Login</button>
           </div>
         </form>
-        </section>
+      </section>
+      <section>
+        <p>Don't have an account? <a href='/register'>Register</a></p>
+      </section>
+      <br />
     </>
   )
 }

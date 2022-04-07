@@ -111,6 +111,9 @@ function Register() {
           </div>
         </form>
         </section>
+        <section>
+          <p>Already have an account? <a href='/login'>Login</a></p>
+        </section>
     </>
   )
 }
