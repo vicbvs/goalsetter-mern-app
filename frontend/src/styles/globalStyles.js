@@ -262,11 +262,3 @@ export const darkTheme = {
   loadingSpinner2: '#555',
   goal: '#292929',
 };
-
-
-
-
-  
-  // a {
-  //   color: #fff; /*change the color here (Header text link)*/ 
-  // }
