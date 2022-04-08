@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 import { register, reset } from './../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import Login from '../components/Login'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -114,6 +115,8 @@ function Register() {
         <section>
           <p>Already have an account? <a href='/login'>Login</a></p>
         </section>
+        <br />
+        <Login />
     </>
   )
 }

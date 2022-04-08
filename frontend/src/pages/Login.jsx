@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import Login from '../components/Login'
 
-function Login() {
+function LoginPage() {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -92,8 +93,9 @@ function Login() {
         <p>Don't have an account? <a href='/register'>Register</a></p>
       </section>
       <br />
+      <Login />
     </>
   )
 }
 
-export default Login
+export default LoginPage
