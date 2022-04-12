@@ -116,6 +116,9 @@ function Register() {
           <p>Already have an account? <a href='/login'>Login</a></p>
         </section>
         <br />
+        <div className='separator'>
+          <hr className="hr-text" data-content="OR" />
+        </div>
         <Login />
     </>
   )

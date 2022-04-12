@@ -107,6 +107,11 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
+  .goal:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253);
+  }
+
   .goal .close {
     position: absolute;
     top: 10px;
@@ -220,33 +225,59 @@ export const GlobalStyles = createGlobalStyle`
   .buttonGoogle {
     height: 56px;
     width: 56px;
+    margin: 0px 20px;
     border-radius: 50%;
-    background-color: #f5f5f5;
-    cursor: pointer;
+    background-color: #fff;
+    background-size: 27px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg');
     border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
   }
 
-  .buttonGoogle img {
-    height: 24px;
-    width: 24px;
-    margin-top: 2px;
-    margin-left: 2px;
+  .buttonGoogle:hover,
+  .buttonFacebook:hover,
+  .buttonGithub:hover {
+    color: #fff;
+    transform: translateY(-7px);
   }
 
   .buttonFacebook {
     height: 56px;
     width: 56px;
     border-radius: 50%;
-    border: 1px solid #e6e6e6;
+    margin: 0px 20px;
     background-color: #3c5a98;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 8.5px 10px;
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg');
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
     cursor: pointer;
+    outline: none;
   }
 
-  .buttonFacebook img {
-    height: 24px;
-    width: 24px;
-    margin-left: -3px;
+  .buttonGithub {
+    height: 56px;
+    width: 56px;
+    margin: 0px 20px;
     border-radius: 50%;
+    background-color: #fff;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg');
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
   }
 
   .separator {
