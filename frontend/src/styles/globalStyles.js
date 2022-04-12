@@ -228,7 +228,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px 20px;
     border-radius: 50%;
     background-color: #fff;
-    background-size: 27px;
+    background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg');
@@ -252,9 +252,9 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 50%;
     margin: 0px 20px;
     background-color: #3c5a98;
-    background-size: 32px;
+    background-size: 45px;
     background-repeat: no-repeat;
-    background-position: 8.5px 10px;
+    background-position: 0px 3px;
     background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg');
     border: none;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
