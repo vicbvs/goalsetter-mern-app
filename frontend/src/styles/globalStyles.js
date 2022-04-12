@@ -210,6 +210,84 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  .login-items {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .buttonGoogle {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border: none;
+  }
+
+  .buttonGoogle img {
+    height: 24px;
+    width: 24px;
+    margin-top: 2px;
+    margin-left: 2px;
+  }
+
+  .buttonFacebook {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    border: 1px solid #e6e6e6;
+    background-color: #3c5a98;
+    cursor: pointer;
+  }
+
+  .buttonFacebook img {
+    height: 24px;
+    width: 24px;
+    margin-left: -3px;
+    border-radius: 50%;
+  }
+
+  .separator {
+    max-width: 50%;  
+    margin: 40px auto;
+  }
+
+  .hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+    &:before {
+      content: '';
+      // use the linear-gradient for the fading effect
+      // use a solid background color for a solid bar
+      background: linear-gradient(to right, transparent, #818078, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+    &:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+
+      padding: 0 .5em;
+      line-height: 1.5em;
+      // this is really the only tricky part, you need to specify the background color of the container element...
+      color: #818078;
+      background-color: #fcfcfa;
+    }
+  }
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);

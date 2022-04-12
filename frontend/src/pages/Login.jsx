@@ -93,6 +93,9 @@ function LoginPage() {
         <p>Don't have an account? <a href='/register'>Register</a></p>
       </section>
       <br />
+      <div className='separator'>
+        <hr className="hr-text" data-content="OR" />
+      </div>
       <Login />
     </>
   )
