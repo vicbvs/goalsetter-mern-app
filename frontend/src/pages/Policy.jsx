@@ -1,3 +1,5 @@
+import React from "react";
+
 function Policy() {
   return (
     <>
@@ -16,7 +18,8 @@ function Policy() {
         created with the help of the{" "}
         <a
           href="https://www.termsfeed.com/blog/sample-privacy-policy-template/"
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Privacy Policy Template
         </a>
@@ -204,7 +207,8 @@ function Policy() {
         close Your web browser. You can learn more about cookies here:{" "}
         <a
           href="https://www.termsfeed.com/privacy-policy-generator/#faq-8"
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Cookies by TermsFeed Generator
         </a>

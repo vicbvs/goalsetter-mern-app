@@ -1,3 +1,4 @@
+import React from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 export const Toggle = ({ theme, toggleTheme }) => {

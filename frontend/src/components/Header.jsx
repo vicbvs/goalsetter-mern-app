@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { Toggle } from './Toggle';
 import { Link, useNavigate } from 'react-router-dom';
