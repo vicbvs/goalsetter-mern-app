@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
-import Login from '../components/Login'
+import GoogleLogin from 'react-google-login'
+import FacebookLogin from 'react-facebook-login';
+
+const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '';
+const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID || '';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -50,6 +54,35 @@ function LoginPage() {
 
     dispatch(login(userData))
   }
+
+  const onSuccess = async (res) => {
+    const userData = {
+      email: '',
+      password: ''
+    }
+
+    if (res.googleId) {
+      userData.email = res.profileObj.email;
+      userData.password = res.tokenId;
+    } else if (res.graphDomain === 'facebook') {
+      userData.email = res.email;
+      userData.password = res.accessToken;
+    }    
+
+    try {
+      dispatch(login(userData))
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onFailure = (res) => {
+    console.log('[Login Failed] res: ', res);
+  };
+  
+  // const responseFacebook = (res) => {
+  //   console.log('[Login Success] currentUser: ', res);
+  // };
 
   if(isLoading) {
     return <Spinner />
@@ -96,7 +129,32 @@ function LoginPage() {
       <div className='separator'>
         <hr className="hr-text" data-content="OR" />
       </div>
-      <Login />
+      <div className='login-items'>
+        <GoogleLogin
+          clientId={googleClientId}
+          buttonText=""
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          render={renderProps => (
+            <span>
+              <button 
+                className='buttonGoogle' 
+                onClick={renderProps.onClick} 
+                disabled={renderProps.disabled} 
+              />
+            </span>
+          )}
+        />
+        <FacebookLogin
+          appId={facebookAppId}
+          autoLoad={false}
+          fields="name,email,picture"
+          callback={onSuccess}
+          cssClass="buttonFacebook"
+          textButton=""
+        />
+      </div>
     </>
   )
 }
