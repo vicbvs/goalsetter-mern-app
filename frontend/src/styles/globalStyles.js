@@ -208,7 +208,7 @@ export const GlobalStyles = createGlobalStyle`
   
   .toggle {
     align-items: center;
-    padding-left: 6.5rem;
+    margin-left: 6.5rem;
     color: ${({ theme }) => theme.color};
     position: relative;
     transition: all 0.5s linear;
