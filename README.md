@@ -1,6 +1,6 @@
 # GoalSetter MERN App
 
-[![license mit][https://img.shields.io/github/license/vicbvs/goalsetter-mern-app]
+[![License: MIT](https://img.shields.io/github/license/vicbvs/goalsetter-mern-app)](https://opensource.org/licenses/MIT)
 
 This is the goalsetter MERN App in which User Can:
 
