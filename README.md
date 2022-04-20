@@ -1,9 +1,12 @@
 # GoalSetter MERN App
 
+[![license mit][https://img.shields.io/github/license/vicbvs/goalsetter-mern-app]
+
 This is the goalsetter MERN App in which User Can:
+
 - Register and make their account
 - After Registering Login into their respective account
--  Set their Goals
+- Set their Goals
 
 ## Usage
 
@@ -21,5 +24,7 @@ npm install
 ```
 
 ### Run Server
+
 ```
 npm run server
+```
