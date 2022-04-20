@@ -16,15 +16,9 @@
     "commit": "git-cz",
     "pretty-quick": "pretty-quick"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx}": [
       "npm run lint:fix",
-      "eslint",
       "pretty-quick — staged",
       "git add"
     ]
