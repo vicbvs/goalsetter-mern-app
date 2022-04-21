@@ -91,6 +91,15 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.heading_p};
   }
 
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #e6e6e6; /*change color (line Header)*/
+    margin-top: 60px;
+  }
+
   .goals {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -201,18 +210,60 @@ export const GlobalStyles = createGlobalStyle`
     width: 64px;
     height: 64px;
     border: 8px solid;
-    border-color: ${({ theme }) => theme.loadingSpinner1} transparent ${({ theme }) => theme.loadingSpinner2} transparent;
+    border-color: ${({ theme }) => theme.loadingSpinner1} transparent ${({
+  theme,
+}) => theme.loadingSpinner2} transparent;
     border-radius: 50%;
     animation: spin 1.2s linear infinite;
   }
   
-  .toggle {
+  .toggle,
+  .language {
     align-items: center;
-    margin-left: 6.5rem;
+    margin: 0px 30px;
     color: ${({ theme }) => theme.color};
     position: relative;
     transition: all 0.5s linear;
     cursor: pointer;
+  }
+
+  .languageButtons {
+    padding: 10px 20px;
+    border: none;
+    background: ${({ theme }) => theme.btn_background};
+    color: ${({ theme }) => theme.btn_color};
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .languageButtons button {
+    width: 100%;
+    padding: 10px;
+    margin: 0px 5px;
+    border: 1px solid ${({ theme }) => theme.btn_border};
+    border-radius: 5px;
+    background: ${({ theme }) => theme.btn_background};
+    color: ${({ theme }) => theme.btn_color};
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    appearance: button;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .languageButtons button:hover {
+    background: ${({ theme }) => theme.btn_background};
+    color: ${({ theme }) => theme.btn_color};
+    transform: scale(0.98);
   }
 
   .login-items {
