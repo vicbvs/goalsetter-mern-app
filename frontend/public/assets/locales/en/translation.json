@@ -1,4 +1,20 @@
 {
+  "welcome": "Welcome",
   "login": "Login",
-  "login_message": "Login and start setting goals"
+  "login_message": "Login and start setting goals",
+  "logout": "Logout",
+  "register": "Register",
+  "register_message": "Please create an account",
+  "placeholder_name": "Enter your name",
+  "placeholder_email": "Enter your email",
+  "placeholder_password": "Enter your password",
+  "placeholder_confirm_password": "Confirm your password",
+  "already_registered": "Already have an account?",
+  "no_account": "Don't have an account?",
+  "dashboard": "Goals Dashboard",
+  "goal": "Goal",
+  "add_goal": "Add goal",
+  "no_goals": "You have not set any goals yet",
+  "or": "OR",
+  "language": "Language"
 }

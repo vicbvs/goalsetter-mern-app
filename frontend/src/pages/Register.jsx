@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import { FaUser } from 'react-icons/fa'
-import { register, reset } from './../features/auth/authSlice'
-import Spinner from '../components/Spinner'
-import GoogleLogin from 'react-google-login'
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+import { FaUser } from 'react-icons/fa';
+import { register, reset } from './../features/auth/authSlice';
+import Spinner from '../components/Spinner';
+import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 
 const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '';
@@ -16,58 +17,60 @@ function RegisterPage() {
     name: '',
     email: '',
     password: '',
-    password2: ''
-  })
+    password2: '',
+  });
 
-  const { name, email, password, password2 } = formData
+  const { name, email, password, password2 } = formData;
 
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
 
-  const {user, isLoading, isError, isSuccess, message} = useSelector((state) => state.auth)
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
 
   useEffect(() => {
-    if(isError) {
-      toast.error(message)
+    if (isError) {
+      toast.error(message);
     }
 
-    if(isSuccess || user) {
-      navigate('/')
+    if (isSuccess || user) {
+      navigate('/');
     }
 
-    dispatch(reset())
-
+    dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (password !== password2) {
-      toast.error('Passwords do not match')
+      toast.error('Passwords do not match');
     } else {
       const userData = {
         name,
         email,
-        password
-      }
+        password,
+      };
 
-      dispatch(register(userData))
+      dispatch(register(userData));
     }
-  }
+  };
 
   const onSuccess = async (res) => {
     const userData = {
       name: '',
       email: '',
-      password: ''
-    }
+      password: '',
+    };
 
     if (res.googleId) {
       userData.name = res.profileObj.givenName;
@@ -80,7 +83,7 @@ function RegisterPage() {
     }
 
     try {
-      dispatch(register(userData))
+      dispatch(register(userData));
     } catch (error) {
       console.log(error);
     }
@@ -89,85 +92,93 @@ function RegisterPage() {
   const onFailure = (res) => {
     console.log('[Login Failed] res: ', res);
   };
-  
+
   // const responseFacebook = (res) => {
   //   console.log('[Login Success] currentUser: ', res);
-  // };  
+  // };
 
-  if(isLoading) {
-    return <Spinner />
+  if (isLoading) {
+    return <Spinner />;
   }
 
   return (
     <>
-      <section className='heading'>
+      <section className="heading">
         <h1>
           <FaUser />
-          Register
+          {t('register')}
         </h1>
-        <p>Please create an account</p>
+        <p>{t('register_message')}</p>
       </section>
-      <section className='form'>
+      <section className="form">
         <form onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input 
-              type="text" 
-              className="form-control" 
-              id="name" 
-              name="name" 
-              value={name} 
-              placeholder="Enter your name" 
-              onChange={onChange} />
-            <input 
-              type="email" 
-              className="form-control" 
-              id="email" 
-              name="email" 
-              value={email} 
-              placeholder="Enter your email" 
-              onChange={onChange} />
-            <input 
-              type="password" 
-              className="form-control" 
-              id="password" 
-              name="password" 
-              value={password} 
-              placeholder="Enter your password" 
-              onChange={onChange} />
-            <input 
-              type="password" 
-              className="form-control" 
-              id="password2" 
-              name="password2" 
-              value={password2} 
-              placeholder="Confirm your password" 
-              onChange={onChange} />
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={name}
+              placeholder={t('placeholder_name')}
+              onChange={onChange}
+            />
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={email}
+              placeholder={t('placeholder_email')}
+              onChange={onChange}
+            />
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              name="password"
+              value={password}
+              placeholder={t('placeholder_password')}
+              onChange={onChange}
+            />
+            <input
+              type="password"
+              className="form-control"
+              id="password2"
+              name="password2"
+              value={password2}
+              placeholder={t('placeholder_confirm_password')}
+              onChange={onChange}
+            />
           </div>
-          <div className='form-group'>
-            <button type="submit" className="btn btn-block">Register</button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-block">
+              {t('register')}
+            </button>
           </div>
         </form>
       </section>
       <section>
-        <p>Already have an account? <a href='/login'>Login</a></p>
+        <p>
+          {t('already_registered')} <a href="/login">{t('login')}</a>
+        </p>
       </section>
       <br />
-      <div className='separator'>
-        <hr className="hr-text" data-content="OR" />
+      <div className="separator">
+        <hr className="hr-text" data-content={t('or')} />
       </div>
-      <div className='login-items'>
+      <div className="login-items">
         <GoogleLogin
           clientId={googleClientId}
           buttonText=""
           onSuccess={onSuccess}
           onFailure={onFailure}
           cookiePolicy={'single_host_origin'}
-          render={renderProps => (
+          render={(renderProps) => (
             <span>
-              <button 
-                className='buttonGoogle' 
-                onClick={renderProps.onClick} 
-                disabled={renderProps.disabled} 
+              <button
+                className="buttonGoogle"
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
               />
             </span>
           )}
@@ -182,7 +193,7 @@ function RegisterPage() {
         />
       </div>
     </>
-  )
+  );
 }
 
-export default RegisterPage
+export default RegisterPage;

@@ -109,7 +109,7 @@ function LoginPage() {
               id="email"
               name="email"
               value={email}
-              placeholder="Enter your email"
+              placeholder={t('placeholder_email')}
               onChange={onChange}
             />
             <input
@@ -118,20 +118,20 @@ function LoginPage() {
               id="password"
               name="password"
               value={password}
-              placeholder="Enter your password"
+              placeholder={t('placeholder_password')}
               onChange={onChange}
             />
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-block">
-              Login
+              {t('login')}
             </button>
           </div>
         </form>
       </section>
       <section>
         <p>
-          Don't have an account? <a href="/register">Register</a>
+          {t('no_account')} <a href="/register">{t('register')}</a>
         </p>
       </section>
       <br />

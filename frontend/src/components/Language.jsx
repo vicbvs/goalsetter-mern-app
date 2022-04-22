@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import cookies from 'js-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,9 +23,16 @@ const languages = [
     name: 'Français',
     country_code: 'fr',
   },
+  {
+    code: 'es',
+    name: 'Español',
+    country_code: 'es',
+  },
 ];
 
 function MyVerticallyCenteredModal(props) {
+  const { t } = useTranslation();
+
   const currentLanguageCode = cookies.get('i18next') || 'en';
   const currentLanguage = languages.find(
     (lang) => lang.code === currentLanguageCode
@@ -38,14 +46,18 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Language</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">
+          {t('language')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="languageButtons">
           {languages.map((language) => (
             <Button
+              key={language.code}
               onClick={
-                (() => i18next.changeLanguage(language.code), props.onHide)
+                () => i18next.changeLanguage(language.code)
+                /*props.onHide*/
               }
               disabled={language.code === currentLanguageCode}
             >

@@ -40,8 +40,10 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+        <h1>
+          {t('welcome')} {user && user.name}
+        </h1>
+        <p>{t('dashboard')}</p>
       </section>
 
       <GoalForm />
@@ -54,7 +56,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You have not set any goals</h3>
+          <h3>{t('no_goals')}</h3>
         )}
       </section>
     </>
