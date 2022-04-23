@@ -1,0 +1,21 @@
+{
+  "welcome": "Bienvenido",
+  "login": "Acceso",
+  "login_message": "Inicie sesión y comience a establecer objetivos",
+  "logout": "Cerrar sesión",
+  "register": "Registro",
+  "register_message": "Por favor crea una cuenta",
+  "placeholder_name": "Introduzca su nombre",
+  "placeholder_email": "Introduce tu correo electrónico",
+  "placeholder_password": "Ingresa tu contraseña",
+  "placeholder_confirm_password": "Confirmar la contraseña",
+  "already_registered": "¿Ya tienes una cuenta?",
+  "no_account": "¿No tienes una cuenta?",
+  "dashboard": "Panel de objetivos",
+  "goal": "Objetivo",
+  "add_goal": "Añadir objetivo",
+  "no_goals": "Aún no has establecido ningún objetivo",
+  "or": "O",
+  "language": "Idioma",
+  "date_time": "es"
+}

@@ -1,0 +1,21 @@
+{
+  "welcome": "Bienvenue",
+  "login": "Connexion",
+  "login_message": "Connectez-vous et commencez à définir des objectifs",
+  "logout": "Se déconnecter",
+  "register": "S'inscrire",
+  "register_message": "Veuillez créer un compte",
+  "placeholder_name": "Entrez votre nom",
+  "placeholder_email": "Entrer votre email",
+  "placeholder_password": "Tapez votre mot de passe",
+  "placeholder_confirm_password": "Confirmer votre mot de passe",
+  "already_registered": "Already have an account?",
+  "no_account": "Vous n'avez pas de compte?",
+  "dashboard": "Tableau de bord des objectifs",
+  "goal": "Objectif",
+  "add_goal": "Ajouter un objectif",
+  "no_goals": "Vous n'avez pas encore fixé d'objectifs",
+  "or": "OU ALORS",
+  "language": "Langue",
+  "date_time": "fr"
+}

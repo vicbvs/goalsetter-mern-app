@@ -1,0 +1,21 @@
+{
+  "welcome": "Bem-vindo",
+  "login": "Conecte-se",
+  "login_message": "Faça login e comece a definir metas",
+  "logout": "Sair",
+  "register": "Registrar",
+  "register_message": "Por favor crie uma conta",
+  "placeholder_name": "Digite seu nome",
+  "placeholder_email": "Digite seu e-mail",
+  "placeholder_password": "Coloque sua senha",
+  "placeholder_confirm_password": "Confirme sua senha",
+  "already_registered": "Já tem uma conta?",
+  "no_account": "Não tem uma conta?",
+  "dashboard": "Painel de metas",
+  "goal": "Meta",
+  "add_goal": "Adicionar meta",
+  "no_goals": "Você ainda não definiu nenhuma meta",
+  "or": "OU",
+  "language": "Idioma",
+  "date_time": "pt"
+}
