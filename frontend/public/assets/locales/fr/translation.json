@@ -16,5 +16,6 @@
   "add_goal": "Ajouter un objectif",
   "no_goals": "Vous n'avez pas encore fixé d'objectifs",
   "or": "OU ALORS",
-  "language": "Langue"
+  "language": "Langue",
+  "date_time": "fr"
 }

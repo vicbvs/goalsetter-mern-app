@@ -34,9 +34,9 @@ function MyVerticallyCenteredModal(props) {
   const { t } = useTranslation();
 
   const currentLanguageCode = cookies.get('i18next') || 'en';
-  const currentLanguage = languages.find(
-    (lang) => lang.code === currentLanguageCode
-  );
+  // const currentLanguage = languages.find(
+  //   (lang) => lang.code === currentLanguageCode
+  // );
 
   return (
     <Modal
@@ -55,10 +55,10 @@ function MyVerticallyCenteredModal(props) {
           {languages.map((language) => (
             <Button
               key={language.code}
-              onClick={
-                () => i18next.changeLanguage(language.code)
-                /*props.onHide*/
-              }
+              onClick={() => {
+                i18next.changeLanguage(language.code);
+                props.onHide();
+              }}
               disabled={language.code === currentLanguageCode}
             >
               <CircleFlag countryCode={language.country_code} height="55" />
