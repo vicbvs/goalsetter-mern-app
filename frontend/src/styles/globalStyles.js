@@ -133,6 +133,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-y: auto !important;
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, 1fr) !important;
     gap: 10px !important;
     color: ${({ theme }) => theme.color} !important;
   }
@@ -144,6 +145,17 @@ export const GlobalStyles = createGlobalStyle`
     margin: 10px 10px 10px 3px !important;
     padding: 20px 0 10px !important;
     position: relative !important;
+  }
+
+  .goal h2 {
+    padding: 10px 10px 0 10px !important;
+    margin-bottom: 0 !important;
+    font-size: 1.5rem !important;
+  }
+
+  .goal div {
+    margin-top: -9px !important;
+    font-size: 0.9rem !important;
   }
 
   .goal:hover {
@@ -159,6 +171,7 @@ export const GlobalStyles = createGlobalStyle`
     border: none !important;
     background: none !important;
     color: ${({ theme }) => theme.color} !important;
+    font-weight: bold;
   }
 
   .form,
