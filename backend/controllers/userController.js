@@ -5,10 +5,9 @@ const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
 
 // Generate JWT
-const generateToken = (id) =>
-  jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
+const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, {
+  expiresIn: process.env.JWT_EXPIRES_IN,
+});
 
 // @desc    Register new user
 // @route   POST /api/users

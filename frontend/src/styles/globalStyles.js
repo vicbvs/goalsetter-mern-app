@@ -455,6 +455,18 @@ export const GlobalStyles = createGlobalStyle`
     .footer {
       column-gap: 50% !important;
     }
+
+    .goal div {
+      margin-top: -4.5px !important;
+      font-size: 0.6rem !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .goal div {
+      margin-top: -4.5px !important;
+      font-size: 0.6rem !important;
+    }
   }
 `;
 
