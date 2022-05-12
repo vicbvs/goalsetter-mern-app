@@ -5,6 +5,25 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    --scrollbarBG: ${({ theme }) => theme.goal} !important;
+    --thumbBG: ${({ theme }) => theme.heading_p} !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG) !important;
+  }  
+  
+  *::-webkit-scrollbar {
+    width: 11px !important;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbarBG) !important;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) !important;
+    border-radius: 6px !important;
+    border: 3px solid var(--scrollbarBG) !important;
   }
 
   body {
@@ -109,8 +128,12 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .goals {
+    height: 300px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, 1fr) !important;
     gap: 10px !important;
     color: ${({ theme }) => theme.color} !important;
   }
@@ -119,9 +142,20 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.goal} !important;
     border: 1px solid ${({ theme }) => theme.border} !important;
     border-radius: 5px !important;
-    margin: 10px 0 !important;
+    margin: 10px 10px 10px 3px !important;
     padding: 20px 0 10px !important;
     position: relative !important;
+  }
+
+  .goal h2 {
+    padding: 10px 10px 0 10px !important;
+    margin-bottom: 0 !important;
+    font-size: 1.5rem !important;
+  }
+
+  .goal div {
+    margin-top: -9px !important;
+    font-size: 0.9rem !important;
   }
 
   .goal:hover {
@@ -137,6 +171,7 @@ export const GlobalStyles = createGlobalStyle`
     border: none !important;
     background: none !important;
     color: ${({ theme }) => theme.color} !important;
+    font-weight: bold;
   }
 
   .form,
@@ -419,6 +454,18 @@ export const GlobalStyles = createGlobalStyle`
 
     .footer {
       column-gap: 50% !important;
+    }
+
+    .goal div {
+      margin-top: -4.5px !important;
+      font-size: 0.6rem !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .goal div {
+      margin-top: -4.5px !important;
+      font-size: 0.6rem !important;
     }
   }
 `;
